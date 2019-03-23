@@ -1,0 +1,18 @@
+
+<div class="container-fluid">
+
+  <hr>
+   startDate: {{startDate | date:'EEEE'}} {{startDate | date:'mediumDate'}}
+    
+   <p>week days</p>
+   <ng-container *ngFor="let item of isoDates">
+    <p>{{item | date:'EE'}}
+   {{item | date:'shortDate'}}
+      </p><br>
+   </ng-container> 
+
+  <hr>
+  <p>{{isoDate}}</p>
+
+  <!-- <ngbd-datepicker-popup></ngbd-datepicker-popup> -->
+</div>
