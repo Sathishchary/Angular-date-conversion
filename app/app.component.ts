@@ -29,7 +29,8 @@ export class AppComponent implements OnInit {
   }
    storeDates(startDateformatChange, i){
      const date = new Date(startDateformatChange);
-    const isoDate = date.setDate(date.getDate() + i);
+    // const isoDate = date.setDate(date.getDate() + i);
+     const isoDate =  date.setUTCDate(date.getUTCDate() + i);
     return isoDate;
   }
   ngOnInit(){
