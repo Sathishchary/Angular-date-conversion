@@ -16,22 +16,14 @@ export class AppComponent implements OnInit {
     for(let i=0; i< 7; i++){
      dates.push(this.storeDates(this.startDate, i));
     }
-    this.arrayDates = dates;
+    this.isoDates = dates;
     console.log(dates)
-    const conv = [];
-    for(let i=0; i< this.arrayDates.length; i++){
-       const isoDate = new Date(this.arrayDates[i]).toDateString();
-       conv.push(isoDate);
-    }
-    this.arrayDates = conv;
-    this.isoDates = conv;
-    console.log(conv);
   }
    storeDates(startDateformatChange, i){
      const date = new Date(startDateformatChange);
     // const isoDate = date.setDate(date.getDate() + i);
      const isoDate =  date.setUTCDate(date.getUTCDate() + i);
-    return isoDate;
+    return isoDate.toString();
   }
   ngOnInit(){
      this.storeDays();
